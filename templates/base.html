@@ -1,0 +1,224 @@
+{% load i18n staticfiles cms_tags cms_static sekizai_tags %}
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        {% render_block "css" %}
+        <title>CCRH</title>
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+        {% include "cssfiles.html" %}
+        {% block staticurls %}
+            <link rel="stylesheet" href="{% static_with_version 'cms/css/cms.base.css' %}">
+            <link rel="stylesheet" href="{% static_with_version 'cms/css/cms.welcome.css' %}">
+        {% endblock %}
+    </head>
+<body>
+    <header>
+        <div class="container-fluid p-0">
+            <div class="sub-header">
+                <div class="wrapper d-flex justify-content-between">
+                    <div class="government_text_left d-flex">
+                        <ul class="list-unstyled d-flex my-auto">
+                            <li><img src="images/india_flag.svg" alt="indian flag"> &nbsp;&nbsp;<span> Government of
+                                    India</span></li>
+                            <li class="mobile_hidden"><span>Tue, 10 Mar, 2020</span>
+                            <li>
+                        </ul>
+                    </div>
+                    <div class="government_text_right d-flex">
+                        <ul class="list-unstyled d-flex my-auto">
+                            <li>Skip to Main Content</li>
+                            <li><a href="#"><span>A</span><span class="line"></span><span
+                                        class="red-circle"></span><span>A</span></a></li>
+                            <li><a href="#"><img src="images/comment.svg"
+                                        alt="comment section">&nbsp;&nbsp;&nbsp;Feedback</a>
+                            </li>
+                            <li><a href="#"><img src="images/facebook.svg" alt="facebook section"></a></li>
+                            <li><a href="#"><img src="images/twitter.svg" alt="twitter section"></a></li>
+                            <li><a href="#"><img src="images/youtube.svg" alt="youtube section"></a></li>
+                            <li><span class="choose_language">English</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="sub_header2">
+                <div class="wrapper d-flex justify-content-between">
+                    <div class="left_side d-flex">
+                        <figure class="logo d-flex">
+                            <a href="#" class=" my-auto"><img class="img-fluid" src="images/logo.png"
+                                    alt="logo for the website"></a>
+                        </figure>
+                        <div class="company_name my-auto">
+                            <p>An ISO 9001:2008 Certified Organization</p>
+                            <h1>Clinical Cases Registry in Homeopathy</h1>
+                            <p>Ministry of AYUSH</p>
+                        </div>
+                    </div>
+                    <figure>
+                        <img src="images/bharat_mahatta.png" alt="bharat mahatta image">
+                    </figure>
+                    <figure>
+                        <img src="images/celebration_of_mahatta.png" class="img-fluid"
+                            alt="15 years celebrating the mahatha">
+                    </figure>
+                    <form class="search_field">
+                        <input type="search" placeholder="search">
+                        <span class="search_icon"><img src="images/search.svg" alt="searching purpose"
+                                class="img-fluid"></span>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <nav class="d-flex justify-content-between">
+            <div class="wrapper d-flex justify-content-between">
+                <ul class="navigation list-unstyled d-flex justify-content-between">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Our Network</a></li>
+                    <li><a href="#">Research Activities</a></li>
+                    <li><a href="#">Publications</a></li>
+                    <li><a href="#">Library</a></li>
+                    <li><a href="#">Gallery</a></li>
+                    <li><a href="#">Announcements</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">RTI</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+                <ul class="navigation2 list-unstyled d-flex">
+                    <li class="login"><a href="#">Login</a></li>
+                    <li class="login register"><a href="#">Register</a></li>
+                </ul>
+            </div>
+        </nav>
+        {% block content %}
+        {% endblock %}
+    </main>
+    <!-- footer section start here-->
+    <footer>
+        <div class="subscriber_section_scubscriber">
+            <div class="patient_container">
+                <div class="row">
+                    <div class="col-sm-6 col-md-7 col-lg-7">
+                        <div class="scuberscriber_block d-flex">
+                            <figure>
+                                <img src="images/mail.svg" alt="subscriber mail deatil" class="img-fluid">
+                            </figure>
+                            <div>
+                                <h2 class="heading">Subscribe to Our Newsletter</h2>
+                                <p>Keep up with our latest news and events. Subscribe to our newsletter.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-5 col-lg-5 d-flex">
+                        <div class="subscriber_input_field my-auto">
+                            <form>
+                                <input type="email" class="email_id form-control" placeholder="Enter your email id">
+                                <span><img src="images/send.svg" alt="send the mail"></span>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer_wave">
+            <div class="patient_container">
+                <div class="navigate_sector_container">
+                    <div class="row">
+                        <div class="col-sm-3 col-md-3 col-lg-3 navigation">
+                            <div class="navigation_block">
+                                <p class="navigation_section">Navigation</p>
+                                <ul class="list-unstyled">
+                                    <li>About Us</li>
+                                    <li>Network Research</li>
+                                    <li>Activities</li>
+                                    <li>Publications</li>
+                                    <li>Library</li>
+                                    <li>Media</li>
+                                    <li>Announcement</li>
+                                    <li>FAQ</li>
+                                    <li>Contact Us</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-sm-3 col-md-6 col-lg-6 network">
+                            <div class="navigation_block1">
+                                <p class="navigation_section">Our Network</p>
+                                <ul class="list-unstyled">
+                                    <li>Andaman & Nicobar</li>
+                                    <li> Andhra Pradesh</li>
+                                    <li>Assam</li>
+                                    <li>Bihar</li>
+                                    <li>Himachal Pradesh</li>
+                                    <li>Jharkhand</li>
+                                    <li>Kerala</li>
+                                    <li>Maharashtra</li>
+                                    <li>Manipur</li>
+                                    <li>Mizoram</li>
+                                    <li>Nagaland</li>
+                                    <li>Orissa</li>
+                                    <li>Puducherry</li>
+                                    <li>Rajasthan</li>
+                                    <li>Sikkim</li>
+                                    <li>Tamil Nadu</li>
+                                    <li>Telangana</li>
+                                    <li>Tripura</li>
+                                    <li>Uttar Pradesh</li>
+                                    <li>West Bengal</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-sm-3 col-md-3 col-lg-3 connnect_with_us">
+                            <div class="navigation_block2">
+                                <p class="navigation_section">Connect with Us</p>
+                                <ul class="list-unstyled">
+                                    <li class="address">
+                                        <p class="sub_heading">CCRH HEADQUARTERS</p><span> 61-65, Institutional
+                                            Area,Janakpuri, New Delhi - 110058, India</span>
+                                    </li>
+                                    <li>
+                                        <p>Telephone :</p>&nbsp;&nbsp;<span>91-11-28525523, 28521162</span>
+                                    </li>
+                                    <li>
+                                        <p>Fax :</p>&nbsp;&nbsp;<span> 91-11-28521060, 28521162</span>
+                                    </li>
+                                    <li>
+                                        <p>E-mail :</p>&nbsp;&nbsp; <span>ccrhindia@gmail.com</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer_bottom">
+                    <div class="help_line">
+                        <p>
+                            <a href="#">Accessibility Option </a>|
+                            <a href="#">Sitemap </a>|
+                            <a href="#">Disclaimer </a>|
+                            <a href="#">Copyright Policy </a>|
+                            <a href="#">Terms & Conditions </a>|
+                            <a href="#">Privacy Policy </a>|
+                            <a href="#">Hyper Linking Policy </a>|
+                            <a href="#">Help </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    {% include "jsfiles.html" %}
+
+</body>
+{% block jsfilesurls %}{% endblock %}
+<script type="text/javascript" src="{% static 'js/validation.js'%}"></script>
+<script type="text/javascript">
+        $(document).ready(function() {
+            {% block custom-js %}{% endblock %}
+        });
+</script>
+</html>
