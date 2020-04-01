@@ -22,19 +22,17 @@
                 <div class="wrapper d-flex justify-content-between">
                     <div class="government_text_left d-flex">
                         <ul class="list-unstyled d-flex my-auto">
-                            <li><img src={% static "images/india_flag.svg" %} alt="indian flag"> &nbsp;&nbsp;<span> Government of
-                                    India</span></li>
+                            <li><img src={% static "images/india_flag.svg" %} alt="indian flag"> &nbsp;&nbsp;<span>{% trans 'Government of India' %}</span></li>
                             <li class="mobile_hidden"><span>{% now "D, jS F, Y" %}</span>
                             <li>
                         </ul>
                     </div>
                     <div class="government_text_right d-flex">
                         <ul class="list-unstyled d-flex my-auto">
-                            <li>Skip to Main Content</li>
+                            <li>{% trans 'Skip to Main Content' %}</li>
                             <li><a href="#"><span>A</span><span class="line"></span><span
                                         class="red-circle"></span><span>A</span></a></li>
-                            <li><a href="#"><img src={% static "images/comment.svg" %}
-                                        alt="comment section">&nbsp;&nbsp;&nbsp;Feedback</a>
+                            <li><a href="#"><img src={% static "images/comment.svg" %} alt="comment section">&nbsp;&nbsp;&nbsp; {% trans 'Feedback' %}</a>
                             </li>
                             <li><a href="#"><img src={% static "images/facebook.svg" %} alt="facebook section"></a></li>
                             <li><a href="#"><img src={% static "images/twitter.svg" %} alt="twitter section"></a></li>
@@ -52,9 +50,9 @@
                                     alt="logo for the website"></a>
                         </figure>
                         <div class="company_name my-auto">
-                            <p>An ISO 9001:2008 Certified Organization</p>
-                            <h1>Clinical Cases Registry in Homeopathy</h1>
-                            <p>Ministry of AYUSH</p>
+                            <p>{% trans 'An ISO 9001:2008 Certified Organization' %}</p>
+                            <h1>{% trans 'Clinical Cases Registry in Homeopathy' %}</h1>
+                            <p>{% trans 'Ministry of AYUSH' %}</p>
                         </div>
                     </div>
                     <figure>
@@ -77,21 +75,21 @@
         <nav class="d-flex justify-content-between">
             <div class="wrapper d-flex justify-content-between">
                 <ul class="navigation list-unstyled d-flex justify-content-between">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Our Network</a></li>
-                    <li><a href="#">Research Activities</a></li>
-                    <li><a href="#">Publications</a></li>
-                    <li><a href="#">Library</a></li>
-                    <li><a href="#">Gallery</a></li>
-                    <li><a href="#">Announcements</a></li>
-                    <li><a href="#">FAQ</a></li>
-                    <li><a href="#">RTI</a></li>
-                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">{% trans 'Home' %}</a></li>
+                    <li><a href="#">{% trans 'About Us' %}</a></li>
+                    <li><a href="#">{% trans 'Our Network' %}</a></li>
+                    <li><a href="#">{% trans 'Research Activities' %}</a></li>
+                    <li><a href="#">{% trans 'Publications' %}</a></li>
+                    <li><a href="#">{% trans 'Library' %}</a></li>
+                    <li><a href="#">{% trans 'Gallery' %}</a></li>
+                    <li><a href="#">{% trans 'Announcements' %}</a></li>
+                    <li><a href="#">{% trans 'FAQ' %}</a></li>
+                    <li><a href="#">{% trans 'RTI' %}</a></li>
+                    <li><a href="#">{% trans 'Contact Us' %}</a></li>
                 </ul>
                 <ul class="navigation2 list-unstyled d-flex">
-                    <li class="login"><a href="#">Login</a></li>
-                    <li class="login register"><a href="#">Register</a></li>
+                    <li class="login"><a href="#">{% trans 'Login' %}</a></li>
+                    <li class="login register"><a href="#">{% trans 'Register' %}</a></li>
                 </ul>
             </div>
         </nav>
@@ -109,15 +107,15 @@
                                 <img src={% static "images/mail.svg" %} alt="subscriber mail deatil" class="img-fluid">
                             </figure>
                             <div>
-                                <h2 class="heading">Subscribe to Our Newsletter</h2>
-                                <p>Keep up with our latest news and events. Subscribe to our newsletter.</p>
+                                <h2 class="heading">{% trans 'Subscribe to Our Newsletter' %}</h2>
+                                <p>{% trans 'Keep up with our latest news and events. Subscribe to our newsletter.' %}</p>
                             </div>
                         </div>
                     </div>
                     <div class="col-sm-6 col-md-5 col-lg-5 d-flex">
                         <div class="subscriber_input_field my-auto">
                             <form>
-                                <input type="email" class="email_id form-control" placeholder="Enter your email id">
+                                <input type="email" class="email_id form-control" placeholder="{% trans 'Enter your email id' %}">
                                 <span><img src={% static "images/send.svg" %} alt="send the mail"></span>
                             </form>
                         </div>
@@ -131,23 +129,23 @@
                     <div class="row">
                         <div class="col-sm-3 col-md-3 col-lg-3 navigation">
                             <div class="navigation_block">
-                                <p class="navigation_section">Navigation</p>
+                                <p class="navigation_section">{% trans 'Navigation' %}</p>
                                 <ul class="list-unstyled">
-                                    <li>About Us</li>
-                                    <li>Network Research</li>
-                                    <li>Activities</li>
-                                    <li>Publications</li>
-                                    <li>Library</li>
-                                    <li>Media</li>
-                                    <li>Announcement</li>
-                                    <li>FAQ</li>
-                                    <li>Contact Us</li>
+                                    <li>{% trans 'About Us' %}</li>
+                                    <li>{% trans 'Network Research' %}</li>
+                                    <li>{% trans 'Activities' %}</li>
+                                    <li>{% trans 'Publications' %}</li>
+                                    <li>{% trans 'Library' %}</li>
+                                    <li>{% trans 'Media' %}</li>
+                                    <li>{% trans 'Announcement' %}</li>
+                                    <li>{% trans 'FAQ' %}</li>
+                                    <li>{% trans 'Contact Us' %}</li>
                                 </ul>
                             </div>
                         </div>
                         <div class="col-sm-3 col-md-6 col-lg-6 network">
                             <div class="navigation_block1">
-                                <p class="navigation_section">Our Network</p>
+                                <p class="navigation_section">{% trans 'Our Network' %}</p>
                                 <ul class="list-unstyled">
                                     <li>Andaman & Nicobar</li>
                                     <li> Andhra Pradesh</li>
@@ -174,20 +172,20 @@
                         </div>
                         <div class="col-sm-3 col-md-3 col-lg-3 connnect_with_us">
                             <div class="navigation_block2">
-                                <p class="navigation_section">Connect with Us</p>
+                                <p class="navigation_section">{% trans 'Connect with Us' %}</p>
                                 <ul class="list-unstyled">
                                     <li class="address">
-                                        <p class="sub_heading">CCRH HEADQUARTERS</p><span> 61-65, Institutional
+                                        <p class="sub_heading">{% trans 'CCRH HEADQUARTERS' %}</p><span> 61-65, Institutional
                                             Area,Janakpuri, New Delhi - 110058, India</span>
                                     </li>
                                     <li>
-                                        <p>Telephone :</p>&nbsp;&nbsp;<span>91-11-28525523, 28521162</span>
+                                        <p>{% trans 'Telephone' %} :</p>&nbsp;&nbsp;<span>91-11-28525523, 28521162</span>
                                     </li>
                                     <li>
-                                        <p>Fax :</p>&nbsp;&nbsp;<span> 91-11-28521060, 28521162</span>
+                                        <p>{% trans 'Fax' %} :</p>&nbsp;&nbsp;<span> 91-11-28521060, 28521162</span>
                                     </li>
                                     <li>
-                                        <p>E-mail :</p>&nbsp;&nbsp; <span>ccrhindia@gmail.com</span>
+                                        <p>{% trans 'E-mail' %} :</p>&nbsp;&nbsp; <span>ccrhindia@gmail.com</span>
                                     </li>
                                 </ul>
                             </div>
@@ -197,14 +195,14 @@
                 <div class="footer_bottom">
                     <div class="help_line">
                         <p>
-                            <a href="#">Accessibility Option </a>|
-                            <a href="#">Sitemap </a>|
-                            <a href="#">Disclaimer </a>|
-                            <a href="#">Copyright Policy </a>|
-                            <a href="#">Terms & Conditions </a>|
-                            <a href="#">Privacy Policy </a>|
-                            <a href="#">Hyper Linking Policy </a>|
-                            <a href="#">Help </a>
+                            <a href="#">{% trans 'Accessibility Option' %} </a>|
+                            <a href="#">{% trans 'Sitemap' %} </a>|
+                            <a href="#">{% trans 'Disclaimer' %} </a>|
+                            <a href="#">{% trans 'Copyright Policy' %} </a>|
+                            <a href="#">{% trans 'Terms & Conditions' %} </a>|
+                            <a href="#">{% trans 'Privacy Policy' %} </a>|
+                            <a href="#">{% trans 'Hyper Linking Policy' %} </a>|
+                            <a href="#">{% trans 'Help' %} </a>
                         </p>
                     </div>
                 </div>
