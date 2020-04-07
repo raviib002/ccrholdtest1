@@ -26,7 +26,8 @@ SECRET_KEY = '*ubmb)x@*m1pv15=6^l%js)j+dh0x_xug&5i9feytjxmwsz=f&'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1']
+INTERNAL_IPS = ('127.0.0.1')
 SITE_ID = 1
 
 # Application definition
@@ -175,6 +176,14 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'staticfiles'),
 )
 
+LOGIN_ERROR_URL    = '/'
+LOGIN_URL    = 'user_profile:login'
+
+AUTHENTICATION_BACKENDS = (
+    'user_profile.email_auth.EmailAuthBackend',
+)
+
+
 '''CMS Settings Start Here'''
 CMS_TEMPLATES = (
     ('cms/home.html', 'Home'),
@@ -191,3 +200,14 @@ THUMBNAIL_PROCESSORS = (
     'easy_thumbnails.processors.filters'
 )
 '''CMS Settings End Here'''
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_USE_SSL = True
+EMAIL_HOST = 'sg3plcpnl0228.prod.sin3.secureserver.net'
+EMAIL_PORT = 465
+EMAIL_HOST_USER = 'smtp@baryonssoftsolutions.com'
+EMAIL_HOST_PASSWORD = 'Baryons@123456'
+DEFAULT_FROM_EMAIL = 'smtp@baryonssoftsolutions.com'
+SEND_MAIL_ALL_PLACE = True
+
+'''Email setting Ends'''
