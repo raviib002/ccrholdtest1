@@ -22,4 +22,8 @@ urlpatterns = [
     path('reset/done/', PasswordResetCompleteView.as_view(
                                                 template_name='user_profile/password_reset_complete.html'
                                                 ), name='password_reset_complete'),
+    path('registration_step/', user_profile_views.registration_step, name='registration_step'),
+    path('profile_info/', user_profile_views.registration_profile_info, name='profile_info'),
+    path('documentation_upload/', user_profile_views.registration_document_upload, name='documentation_upload'),
+
     ]
