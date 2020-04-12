@@ -141,6 +141,43 @@ $(".logo_section_block").ready(function() {
     });
 });
 
+// validation for forgot Password starts here
+    validator = $("#profile_info").validate({
+        rules: {
+            first_name: {
+                required: true,
+            },
+             mobile_number: {
+                digits: true,
+                minlength: 10,
+                maxlength: 10,
+                required: true,
+                
+            },
+            email: {
+                required: true,
+                email: true,
+            },
+            pincode : {
+                required : false,
+                maxlength: 6,
+                digits: true,
+                minlength: 6,
 
+            }
+        },
+        messages: {
+            first_name: {
+                required: "This field is required",
+            },
+             mobile_number: {
+                required: "This field is required",
+            },
+             email: {
+                required: "This field is required",
+            },
+        },
+    });
+// validation for forgot Password ends here
 
 });
