@@ -88,11 +88,29 @@
                     <li><a href="#">{% trans 'Contact Us' %}</a></li>
                 </ul>
                 <ul class="navigation2 list-unstyled d-flex">
-                    <li class="login"><a href="#">{% trans 'Login' %}</a></li>
-                    <li class="login register"><a href="#">{% trans 'Register' %}</a></li>
+                    <li class="login"><a href="{% url 'user_profile:login' %}">{% trans 'Login' %}</a></li>
+                    <li class="login register"><a href="{% url 'user_profile:registration_step' %}">{% trans 'Register' %}</a></li>
                 </ul>
             </div>
         </nav>
+        <!--modal for displaying messages -- starts -->
+     <div class="modal fade modal-bgcolor1" id="suc_msg_popup" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header forget-link-header1">
+                <button class="link1 close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body forget-link-body1">
+                <div class="row">
+                <p id="suc_msg" class="para-link-center p1"></p>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+ <!-- modal for displaying messages -- Ends -->
         {% block content %}
         {% endblock %}
     </main>
