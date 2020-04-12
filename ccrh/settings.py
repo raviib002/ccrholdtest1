@@ -29,7 +29,7 @@ DEBUG = True
 ALLOWED_HOSTS = ['127.0.0.1']
 INTERNAL_IPS = ('127.0.0.1')
 SITE_ID = 1
-
+ADMIN_EMAIL = 'smtp@baryonssoftsolutions.com'
 # Application definition
 
 INSTALLED_APPS = [
@@ -57,6 +57,9 @@ INSTALLED_APPS = [
     'djangocms_video',
     'djangocms_column',
     'debug_toolbar',
+    'utils',
+    'master',
+    'user_profile',
 ]
 
 MIDDLEWARE = [
@@ -117,7 +120,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql', 
         'NAME': 'ccrh', #live_gwave GWave
         'USER': 'root',
-        'PASSWORD': 'mysql',
+        'PASSWORD': '',
         'HOST': 'localhost',   # Or an IP Address that your DB is hosted on
         'PORT': '3306',
         'OPTIONS': {
