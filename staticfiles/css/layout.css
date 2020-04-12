@@ -8,9 +8,9 @@ body#bodyElement {
   font-size: 15px;
 }
 
-button:focus {
+/* button:focus {
   outline: none !important;
-}
+} */
 
 input:focus {
   outline: none !important;
@@ -3498,9 +3498,9 @@ body {
   font-family: 'Acumin Pro', sans-serif;
 }
 
-button:focus {
+/* button:focus {
   outline: none !important;
-}
+} */
 
 input:focus {
   outline: none !important;
@@ -7317,6 +7317,9 @@ ooooooooooo0
 }
 
 /** media query for navbar ends **/
+button.go_back:focus {
+    border: 1px solid black;
+}
 /*# sourceMappingURL=style.css.map */
 
 
