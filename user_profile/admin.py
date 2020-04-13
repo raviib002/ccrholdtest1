@@ -16,4 +16,4 @@ class ProfilestatusAdmin(admin.ModelAdmin):
     
 
     
-admin.site.register(Profilestatus, NewsAdmin)
+admin.site.register(Profilestatus, ProfilestatusAdmin)
