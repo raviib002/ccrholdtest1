@@ -16,61 +16,7 @@
         {% endblock %}
     </head>
 <body>
-    <header>
-        <div class="container-fluid p-0">
-            <div class="sub-header">
-                <div class="wrapper d-flex justify-content-between">
-                    <div class="government_text_left d-flex">
-                        <ul class="list-unstyled d-flex my-auto">
-                            <li><img src={% static "images/india_flag.svg" %} alt="indian flag"> &nbsp;&nbsp;<span>{% trans 'Government of India' %}</span></li>
-                            <li class="mobile_hidden"><span>{% now "D, jS F, Y" %}</span>
-                            <li>
-                        </ul>
-                    </div>
-                    <div class="government_text_right d-flex">
-                        <ul class="list-unstyled d-flex my-auto">
-                            <li>{% trans 'Skip to Main Content' %}</li>
-                            <li><a href="#"><span>A</span><span class="line"></span><span
-                                        class="red-circle"></span><span>A</span></a></li>
-                            <li><a href="#"><img src={% static "images/comment.svg" %} alt="comment section">&nbsp;&nbsp;&nbsp; {% trans 'Feedback' %}</a>
-                            </li>
-                            <li><a href="#"><img src={% static "images/facebook.svg" %} alt="facebook section"></a></li>
-                            <li><a href="#"><img src={% static "images/twitter.svg" %} alt="twitter section"></a></li>
-                            <li><a href="#"><img src={% static "images/youtube.svg" %} alt="youtube section"></a></li>
-                            <li><span class="choose_language">English</span></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="sub_header2">
-                <div class="wrapper d-flex justify-content-between">
-                    <div class="left_side d-flex">
-                        <figure class="logo d-flex">
-                            <a href="#" class=" my-auto"><img class="img-fluid" src={% static "images/logo.png" %}
-                                    alt="logo for the website"></a>
-                        </figure>
-                        <div class="company_name my-auto">
-                            <p>{% trans 'An ISO 9001:2008 Certified Organization' %}</p>
-                            <h1>{% trans 'Clinical Cases Registry in Homeopathy' %}</h1>
-                            <p>{% trans 'Ministry of AYUSH' %}</p>
-                        </div>
-                    </div>
-                    <figure>
-                        <img src={% static "images/bharat_mahatta.png" %} alt="bharat mahatta image">
-                    </figure>
-                    <figure>
-                        <img src={% static "images/celebration_of_mahatta.png" %} class="img-fluid"
-                            alt="15 years celebrating the mahatha">
-                    </figure>
-                    <form class="search_field">
-                        <input type="search" placeholder="search">
-                        <span class="search_icon"><img src={% static "images/search.svg" %} alt="searching purpose"
-                                class="img-fluid"></span>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </header>
+    {% include "header.html" %}
     <main>
         <nav class="d-flex justify-content-between">
             <div class="wrapper d-flex justify-content-between">
@@ -93,6 +39,7 @@
                 </ul>
             </div>
         </nav>
+        {# cms_toolbar #}
         <!--modal for displaying messages -- starts -->
      <div class="modal fade modal-bgcolor1" id="suc_msg_popup" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog" role="document">
