@@ -76,11 +76,11 @@ class Media(models.Model):
         db_table = 'ccrh_media'
         
 class Status(models.Model):
-    STATUS_CHOICES = (
-        (u'0', u'InActive'),
-        (u'1', u'Active'),
-    )
-    status_name = models.CharField(max_length=1, choices=STATUS_CHOICES, verbose_name=_("Status"))
+#     STATUS_CHOICES = (
+#         (u'0', u'InActive'),
+#         (u'1', u'Active'),
+#     )
+    status_name = models.CharField(max_length=200,  verbose_name=_("Status"))
     created_by = CreatingUserField(related_name = "StatusCreatedBy")
     created_date = models.DateTimeField(auto_now_add=True,auto_now=False)
     updated_by = LastUserField(related_name = "StatusUpdatedBy")
@@ -88,7 +88,7 @@ class Status(models.Model):
 
     def __str__(self):
         return self.status_name
-    
+     
     class Meta:
         verbose_name = "Status"
         verbose_name_plural = "Status"
@@ -96,9 +96,12 @@ class Status(models.Model):
         
 #Creating model for state Table Starts here
 class State(models.Model):
+    COUNTRY_CHOICES = (
+        (u'1', u'INDIA'),
+    )
     state_name = models.CharField(max_length=100, verbose_name=_("State Name"))
-    country_id = models.IntegerField(default=1,verbose_name=_("Country Id"))
-    status =  models.ForeignKey(Status,  on_delete=models.CASCADE, verbose_name=_("Status Id"))
+    country_id = models.CharField(max_length=1,default=1, choices=COUNTRY_CHOICES, verbose_name=_("Country Name"))
+    status =  models.ForeignKey(Status,  on_delete=models.CASCADE, verbose_name=_("Status"))
     created_by = CreatingUserField(related_name = "StateCreatedBy")
     created_date = models.DateTimeField(auto_now_add=True,auto_now=False)
     updated_by = LastUserField(related_name = "StateUpdatedBy")
@@ -113,9 +116,9 @@ class State(models.Model):
         db_table = 'ccrh_master_state'
 #Creating model for city Table Starts here
 class City(models.Model):
-    city_name = models.CharField(max_length=100, verbose_name=_("State Name"))
-    state =  models.ForeignKey(State,  on_delete=models.CASCADE, verbose_name=_("State Id"))
-    status =  models.ForeignKey(Status,  on_delete=models.CASCADE, verbose_name=_("Status Id"))
+    city_name = models.CharField(max_length=100, verbose_name=_("City Name"))
+    state =  models.ForeignKey(State,  on_delete=models.CASCADE, verbose_name=_("State Name"))
+    status =  models.ForeignKey(Status,  on_delete=models.CASCADE, verbose_name=_("Status"))
     created_by = CreatingUserField(related_name = "CityCreatedBy")
     created_date = models.DateTimeField(auto_now_add=True,auto_now=False)
     updated_by = LastUserField(related_name = "CityUpdatedBy")
