@@ -11,6 +11,9 @@ from master.models import (News,
                            QuickLink,
                            Media,
                            MediaMapping,
+                           State,
+                           City,
+                            Status,
                            )
 
 # Register your models here.
@@ -32,9 +35,20 @@ class MediaAdmin(admin.ModelAdmin):
     
 class MediaMappingAdmin(admin.ModelAdmin):    
     list_display = ('headline_name', )
+class StateAdmin(admin.ModelAdmin):    
+    list_display = ('state_name','country_id','status', )
+    search_fields = ('state_name',)
+class CityAdmin(admin.ModelAdmin):    
+    list_display = ('city_name','state','status', )
+    search_fields = ('city_name',)
+class StatusAdmin(admin.ModelAdmin):    
+    list_display = ('status_name', )
     
 admin.site.register(News, NewsAdmin)
 admin.site.register(Downloads, DownloadsAdmin)
 admin.site.register(QuickLink, QuickLinkAdmin)
 admin.site.register(Media, MediaAdmin)
 admin.site.register(MediaMapping, MediaMappingAdmin)
+admin.site.register(State, StateAdmin)
+admin.site.register(City, CityAdmin)
+admin.site.register(Status, CityAdmin)
