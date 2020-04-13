@@ -9,13 +9,13 @@ from master.models import (State,City)
 
 #Creating model for Status Table Starts here
 class Profilestatus(models.Model):
-#     PROFILE_CHOICES = (
-#         (u'1', u'Pending for Approval'),
-#         (u'2', u'Approved'),
-#         (u'3', u'Rejected'),
-#         (u'4', u'Disabled'),
-# 
-#     )
+    PROFILE_CHOICES = (
+        (u'1', u'Pending for Approval'),
+        (u'2', u'Approved'),
+        (u'3', u'Rejected'),
+        (u'4', u'Disabled'),
+ 
+    )
     profile_status = models.CharField(max_length=50, verbose_name=_("Profile Status"))
     created_by = CreatingUserField(related_name = "ProfilestatusCreatedBy")
     created_date = models.DateTimeField(auto_now_add=True,auto_now=False)
@@ -23,7 +23,7 @@ class Profilestatus(models.Model):
     updated_date = models.DateTimeField(auto_now_add=False, auto_now=True)
 
     def __str__(self):
-        return self.status_name
+        return self.profile_status
     
     class Meta:
         verbose_name = "Profile status"

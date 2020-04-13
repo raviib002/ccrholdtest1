@@ -7,6 +7,7 @@ from django.contrib.auth.forms import (AuthenticationForm, UserCreationForm,
 from django import forms
 from django.contrib.auth.models import User, Group
 from django.utils.translation import ugettext_lazy as _
+from user_profile.models import AdditionalProfile
 
 
 class LoginForm(AuthenticationForm):
@@ -56,22 +57,19 @@ class CustomSetPasswordForm(SetPasswordForm):
     new_password2 = forms.CharField(label="Confirm New Password", widget=forms.PasswordInput(attrs={'class':'form-control confirm-password-reset', 'placeholder': 'Confirm New Password'}))  
     
       
-# class RegistrationStep2(forms.Form):
+class RegistrationStep2(forms.Form):
 #     first_name = forms.CharField(required=True, label='First Name',max_length='100', widget=forms.TextInput(attrs={'class':'form-control first_name'}))
 #     last_name = forms.CharField(required=False,label='Last Name', widget=forms.TextInput(attrs={'class':'form-control last_name'}))
 #     middle_name = forms.CharField(required=False,label='Middle Name',  widget=forms.TextInput(attrs={'class':'form-control middle_name'}))
-#     mobile_number = forms.CharField(required=True, max_length=10,label='Mobile Number', widget=forms.TextInput(attrs={'class':'form-control mobile_number'}))
+    mobile_no = forms.CharField(required=True, max_length=10,label='Mobile Number', widget=forms.TextInput(attrs={'class':'form-control mobile_number'}))
 #     email = forms.CharField(required=True, max_length=100, label='Email Id', widget=forms.TextInput(attrs={'class':'form-control email'}))
-#     pincode = forms.CharField(required=False, max_length=10, label='Pincode', widget=forms.TextInput(attrs={'class':'form-control pincode'}))
-#     address1 =  forms.CharField(required=False,label='Address 1', widget=forms.Textarea(attrs={'class':'form-control address1 ','rows':'2', 'cols':'5' }))
-#     address2 =  forms.CharField(required=False,label='Address 2', widget=forms.Textarea(attrs={'class':'form-control address2 ','rows':'2', 'cols':'5' }))
+    pincode = forms.CharField(required=False, max_length=10, label='Pincode', widget=forms.TextInput(attrs={'class':'form-control pincode'}))
+    address_line1 =  forms.CharField(required=False,label='Address 1', widget=forms.Textarea(attrs={'class':'form-control address1 ','rows':'2', 'cols':'5' }))
+    address_line2 =  forms.CharField(required=False,label='Address 2', widget=forms.Textarea(attrs={'class':'form-control address2 ','rows':'2', 'cols':'5' }))
 
-
-
-    
-#     class Meta:
-# #         model = SubscriberDocument
-#         fields = ['first_name','last_name', 'middle_name','mobile_number','email','pincode','addess1','addess2']
+    class Meta:
+        model = AdditionalProfile
+        fields = ['mobile_no','pincode','address_line1','address_line2']
 
 class RegistrationStep3(forms.Form):
     registration_no = forms.CharField(label='Registration No',max_length='100', widget=forms.TextInput(attrs={'class':'form-control registration_no'}))

@@ -25,5 +25,6 @@ urlpatterns = [
     path('registration_step/', user_profile_views.registration_step, name='registration_step'),
     path('profile_info/', user_profile_views.registration_profile_info, name='profile_info'),
     path('documentation_upload/', user_profile_views.registration_document_upload, name='documentation_upload'),
+    path('register_success/', user_profile_views.registration_successfuly, name='register_success'),
 
     ]
