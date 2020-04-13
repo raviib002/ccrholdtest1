@@ -60,6 +60,8 @@ INSTALLED_APPS = [
     'utils',
     'master',
     'user_profile',
+    'import_export',
+#     'admin_reorder',
 ]
 
 MIDDLEWARE = [
@@ -118,7 +120,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql', 
-        'NAME': 'ccrh', #live_gwave GWave
+        'NAME': 'ccrh_1', #live_gwave GWave
         'USER': 'root',
         'PASSWORD': '',
         'HOST': 'localhost',   # Or an IP Address that your DB is hosted on
