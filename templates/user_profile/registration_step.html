@@ -57,12 +57,6 @@
 
 {% block custom-js %}
 
-/********* After email sent displaying success message - starts *******/
-    {% if succes_message %}
-        $('#suc_msg_popup').modal();
-        $('#suc_msg').text('{{ succes_message }}');
-    {% endif %}
-/********* After email sent displaying success message - ends *******/
 
     $(".options").focus(function() {
         var role_id = $(this).data('info');
