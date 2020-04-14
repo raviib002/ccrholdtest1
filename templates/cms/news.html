@@ -1,0 +1,10 @@
+{% load i18n staticfiles cms_tags cms_static sekizai_tags %}
+<div class="news_section">
+    <div class="news_fig">
+        <img src="{{instance.news.photo.url}}" alt="corona virus advice from homopathic doctor" class="img-fluid">
+    </div>
+    <div>
+        <p>{{ instance.news.news_headline }}</p>
+        <span>{{ instance.news.created_date|date }}</span>
+    </div>
+</div>

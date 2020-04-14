@@ -1,0 +1,8 @@
+{% load i18n staticfiles cms_tags cms_static sekizai_tags %}
+<div class="news_section">
+    <div>
+        <p class="heading">{{ instance.downloads.download_headline }}</p>
+        <p>{{ instance.downloads.desc }}</p>
+        <span>{{ instance.downloads.created_date|date }}</span>
+    </div>
+</div>

@@ -1,0 +1,180 @@
+{% load i18n staticfiles cms_tags cms_static sekizai_tags %}
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        {% render_block "css" %}
+        <title>CCRH</title>
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+        {% include "cssfiles.html" %}
+        {% block staticurls %}
+            <link rel="stylesheet" href="{% static_with_version 'cms/css/cms.base.css' %}">
+            <link rel="stylesheet" href="{% static_with_version 'cms/css/cms.welcome.css' %}">
+        {% endblock %}
+    </head>
+<body>
+    {% include "header.html" %}
+    <div class="main_section">
+        <main>
+            <nav class="navbar_link">
+                <div class="wrapper d-flex justify-content-between">
+                    <ul class="navigation list-unstyled d-flex justify-content-between">
+                        {% load menu_tags %}
+                        {% show_menu %}
+                    </ul>
+                    <ul class="navigation2 list-unstyled d-flex">
+                        <li class="login"><a href="{% url 'user_profile:login' %}">{% trans 'Login' %}</a></li>
+                        <li class="login register"><a href="#">{% trans 'Register' %}</a></li>
+                    </ul>
+                </div>
+            </nav>
+            {% cms_toolbar %}
+            <!--modal for displaying messages -- starts -->
+         <div class="modal fade modal-bgcolor1" id="suc_msg_popup" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header forget-link-header1">
+                    <button class="link1 close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body forget-link-body1">
+                    <div class="row">
+                    <p id="suc_msg" class="para-link-center p1"></p>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+     <!-- modal for displaying messages -- Ends -->
+            {% block content %}
+            {% endblock %}
+        </main>
+    </div>
+    <!-- footer section start here-->
+    <footer>
+        <div class="subscriber_section_scubscriber">
+            <div class="patient_container">
+                <div class="row">
+                    <div class="col-sm-6 col-md-7 col-lg-7">
+                        <div class="scuberscriber_block d-flex">
+                            <figure>
+                                <img src={% static "images/mail.svg" %} alt="subscriber mail deatil" class="img-fluid">
+                            </figure>
+                            <div>
+                                <h2 class="heading">{% trans 'Subscribe to Our Newsletter' %}</h2>
+                                <p>{% trans 'Keep up with our latest news and events. Subscribe to our newsletter.' %}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-5 col-lg-5 d-flex">
+                        <div class="subscriber_input_field my-auto">
+                            <form>
+                                <input type="email" class="email_id form-control" placeholder="{% trans 'Enter your email id' %}">
+                                <span><img src={% static "images/send.svg" %} alt="send the mail"></span>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer_wave">
+            <div class="patient_container">
+                <div class="navigate_sector_container">
+                    <div class="row">
+                        <div class="col-sm-3 col-md-3 col-lg-3 navigation">
+                            <div class="navigation_block">
+                                <p class="navigation_section">{% trans 'Navigation' %}</p>
+                                <ul class="list-unstyled">
+                                    <li>{% trans 'About Us' %}</li>
+                                    <li>{% trans 'Network Research' %}</li>
+                                    <li>{% trans 'Activities' %}</li>
+                                    <li>{% trans 'Publications' %}</li>
+                                    <li>{% trans 'Library' %}</li>
+                                    <li>{% trans 'Media' %}</li>
+                                    <li>{% trans 'Announcement' %}</li>
+                                    <li>{% trans 'FAQ' %}</li>
+                                    <li>{% trans 'Contact Us' %}</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-sm-3 col-md-6 col-lg-6 network">
+                            <div class="navigation_block1">
+                                <p class="navigation_section">{% trans 'Our Network' %}</p>
+                                <ul class="list-unstyled">
+                                    <li>Andaman & Nicobar</li>
+                                    <li> Andhra Pradesh</li>
+                                    <li>Assam</li>
+                                    <li>Bihar</li>
+                                    <li>Himachal Pradesh</li>
+                                    <li>Jharkhand</li>
+                                    <li>Kerala</li>
+                                    <li>Maharashtra</li>
+                                    <li>Manipur</li>
+                                    <li>Mizoram</li>
+                                    <li>Nagaland</li>
+                                    <li>Orissa</li>
+                                    <li>Puducherry</li>
+                                    <li>Rajasthan</li>
+                                    <li>Sikkim</li>
+                                    <li>Tamil Nadu</li>
+                                    <li>Telangana</li>
+                                    <li>Tripura</li>
+                                    <li>Uttar Pradesh</li>
+                                    <li>West Bengal</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-sm-3 col-md-3 col-lg-3 connnect_with_us">
+                            <div class="navigation_block2">
+                                <p class="navigation_section">{% trans 'Connect with Us' %}</p>
+                                <ul class="list-unstyled">
+                                    <li class="address">
+                                        <p class="sub_heading">{% trans 'CCRH HEADQUARTERS' %}</p><span> 61-65, Institutional
+                                            Area,Janakpuri, New Delhi - 110058, India</span>
+                                    </li>
+                                    <li>
+                                        <p>{% trans 'Telephone' %} :</p>&nbsp;&nbsp;<span>91-11-28525523, 28521162</span>
+                                    </li>
+                                    <li>
+                                        <p>{% trans 'Fax' %} :</p>&nbsp;&nbsp;<span> 91-11-28521060, 28521162</span>
+                                    </li>
+                                    <li>
+                                        <p>{% trans 'E-mail' %} :</p>&nbsp;&nbsp; <span>ccrhindia@gmail.com</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer_bottom">
+                    <div class="help_line">
+                        <p>
+                            <a href="#">{% trans 'Accessibility Option' %} </a>|
+                            <a href="#">{% trans 'Sitemap' %} </a>|
+                            <a href="#">{% trans 'Disclaimer' %} </a>|
+                            <a href="#">{% trans 'Copyright Policy' %} </a>|
+                            <a href="#">{% trans 'Terms & Conditions' %} </a>|
+                            <a href="#">{% trans 'Privacy Policy' %} </a>|
+                            <a href="#">{% trans 'Hyper Linking Policy' %} </a>|
+                            <a href="#">{% trans 'Help' %} </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    {% include "jsfiles.html" %}
+
+</body>
+{% block jsfilesurls %}{% endblock %}
+<script type="text/javascript" src="{% static 'js/validation.js'%}"></script>
+<script type="text/javascript">
+        $(document).ready(function() {
+            {% block custom-js %}{% endblock %}
+        });
+</script>
+</html>
