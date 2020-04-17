@@ -24,6 +24,7 @@ from django.conf.urls.static import static
 urlpatterns = i18n_patterns(
     url('admin/', admin.site.urls),
     url('user/', include('user_profile.urls', namespace='user_profile')),
+    url('contact-us', include('djangocms_forms.urls')),
     url('', include('cms.urls')),
 ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
