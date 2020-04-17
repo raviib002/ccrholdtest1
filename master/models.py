@@ -60,7 +60,7 @@ class QuickLink(models.Model):
         
 class Media(models.Model):
     headline = models.CharField(max_length=250, verbose_name=_("Media Headline"))
-    cover_photo = models.ImageField(upload_to='Media_cover/', default='', verbose_name=_("Quick Link Banner"))
+#     cover_photo = models.ImageField(upload_to='Media_cover/', default='', verbose_name=_("Quick Link Banner"))
     video  = models.FileField(upload_to='Media_video', verbose_name=_("Video"))
     created_by = CreatingUserField(related_name = "MediaCreatedBy")
     created_date = models.DateTimeField(auto_now_add=True,auto_now=False)
