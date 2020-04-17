@@ -179,5 +179,45 @@ $(".logo_section_block").ready(function() {
         },
     });
 // validation for forgot Password ends here
+    validator = $("div.contact-us form").validate({
+        rules: {
+            firstname: {
+                required: true,
+            },
+            lastname: {
+                required: true,
+            },
+            email: {
+                required: true,
+                email: true,
+            },
+            mobile: {
+                digits: true,
+                minlength: 10,
+                maxlength: 10,
+                required: true,
+            },
+            message: {
+                required: true,
+            },
+        },
+        messages: {
+            firstname: {
+                required: "This field is required",
+            },
+            lastname: {
+                required: "This field is required",
+            },
+            email: {
+                required: "This field is required",
+            },
+            mobile: {
+                required: "This field is required",
+            },
+            message: {
+                required: "This field is required",
+            },
+        },
+    });
 
 });
