@@ -1,11 +1,12 @@
 {% load i18n staticfiles cms_tags cms_static sekizai_tags %}
 <div class="image_block">
     <div class="image_block_fig">
-        <img src="{{instance.media.cover_photo.url}}" alt="photograph of NHRIMH" class="img-fluid">
+        <video name='media' controls>
+            <source src="{{instance.media.video.url}}" type="video/mp4"></source>
+        </video>
+        <!-- <img src="{{instance.media.cover_photo.url}}" alt="photograph of NHRIMH" class="img-fluid"> -->
     </div>
-    <div class="overlay"></div>
     <div class="media_content">
-        <span class="media_line"></span>
         <p>{{ instance.media.headline }}</p>
     </div>
 </div>
