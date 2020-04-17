@@ -1337,13 +1337,21 @@ main nav button.close {
 }
 
 .media_blocks .patient_container .row.media_link_row .media_section .media_image_container .image_block:nth-child(1) {
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 .media_blocks .patient_container .row.media_link_row .media_section .media_image_container .image_block {
   width: 24%;
-  margin-right: 0.8%;
+  margin-right: 0.6%;
   display: inline-block;
+}
+
+.media_blocks .patient_container .row.media_link_row .media_section .media_image_container .image_block video {
+  width: 100%;
+}
+
+.media_blocks .patient_container .row.media_link_row .media_section .media_image_container .image_block iframe {
+  width: 100%;
 }
 
 .media_blocks .patient_container .row.media_link_row .media_section .media_image_container .image_block .overlay {
@@ -1362,7 +1370,8 @@ main nav button.close {
 }
 
 .media_blocks .patient_container .row.media_link_row .media_section .image_block:nth-child(5) {
-  width: 50%;
+  max-width: 50%;
+  width: 100%;
   position: absolute;
   top: 0;
   right: 0;
@@ -1386,12 +1395,6 @@ main nav button.close {
 
 .media_blocks .patient_container .row.media_link_row .media_section .image_block_fig img {
   width: 100%;
-}
-
-.media_blocks .patient_container .row.media_link_row .media_section .media_content {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
 }
 
 .media_blocks .patient_container .row.media_link_row .media_section .youtube_play_button {
@@ -1430,7 +1433,7 @@ main nav button.close {
   margin: 0;
   font-size: 0.938em;
   font-weight: 500;
-  color: #FFFFFF;
+  color: #191919;
 }
 
 /* media ends */
@@ -2783,7 +2786,6 @@ ooooooooooo0
 /** login role ends **/
 /** About Us starts **/
 .aboutus_banner {
-  background: url("../images/aboutus_banner.png");
   min-height: calc(100vh - 500px);
   background-repeat: no-repeat;
   position: relative;
@@ -2791,6 +2793,16 @@ ooooooooooo0
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+.aboutus_banner img.img-fluid.aboutus_banner_img {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  right: 0;
+  bottom: 0;
 }
 
 .aboutus_banner .overlay {
@@ -2810,8 +2822,9 @@ ooooooooooo0
   margin: auto;
   color: #FFFFFF;
   font-size: 2.625em;
-  z-index: 99;
+  z-index: 98;
   font-weight: bold;
+  text-align: center;
 }
 
 .aboutus_heading {
@@ -2834,6 +2847,10 @@ ooooooooooo0
   color: #191919;
   font-size: 0.875em;
   font-weight: 400;
+}
+
+.aboutus_container p a {
+  color: #191919;
 }
 
 .aboutus_container .aboutus_link {
