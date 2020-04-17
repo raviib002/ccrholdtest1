@@ -60,6 +60,7 @@ INSTALLED_APPS = [
     'user_profile',
     'import_export',
     'admin_reorder',
+    'djangocms_forms',
 ]
 
 MIDDLEWARE = [
@@ -172,6 +173,7 @@ STATICFILES_DIRS = (
 
 LOGIN_ERROR_URL    = '/'
 LOGIN_URL    = 'user_profile:login'
+LOGOUT_REDIRECT_URL = '/'
 
 AUTHENTICATION_BACKENDS = (
     'user_profile.email_auth.EmailAuthBackend',
@@ -181,7 +183,16 @@ AUTHENTICATION_BACKENDS = (
 '''CMS Settings Start Here'''
 CMS_TEMPLATES = (
     ('cms/home.html', 'Home'),
-    ('cms/home_logo_section.html', 'Home Logo Section'),
+    ('cms/about_us.html', 'About Us'),
+    ('cms/announcements.html', 'Announcements'),
+    ('cms/contact_us.html', 'Contact Us'),
+    ('cms/faq.html', 'FAQ'),
+    ('cms/gallery.html', 'Gallery'),
+    ('cms/library.html', 'Library'),
+    ('cms/our_network.html', 'Our Network'),
+    ('cms/publications.html', 'Publications'),
+    ('cms/research_activities.html', 'Research Activities'),
+    ('cms/rti.html', 'RTI'),
 )
 
 CMS_PERMISSION = True
@@ -204,14 +215,16 @@ CMS_LANGUAGES = {
             'hide_untranslated': True,
             'redirect_on_fallback': False,
         },
-        {
-            'code': 'hi',
-            'name': _('Hindi'),
-            'fallbacks': ['en',],
-            'public': True,
-        },
+#         {
+#             'code': 'hi',
+#             'name': _('Hindi'),
+#             'fallbacks': ['en',],
+#             'public': True,
+#         },
     ],
     }
+DJANGOCMS_FORMS_USE_HTML5_REQUIRED = False
+DJANGOCMS_FORMS_WIDGET_CSS_CLASSES = {'__all__': ('form-control', ) }
 '''CMS Settings End Here'''
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
