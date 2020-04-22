@@ -219,5 +219,10 @@ $(".logo_section_block").ready(function() {
             },
         },
     });
+    
+    $(".options").click(function() {
+        $(".options").removeClass("active");
+        $(this).addClass("active");
+    });
 
 });
