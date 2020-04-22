@@ -1,8 +1,9 @@
+import requests
 import json
 import random
 import string
 from django.contrib.auth import views as auth_views
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout, update_session_auth_hash
 from django.http import HttpResponseRedirect, HttpResponse
 from django.urls.base import reverse_lazy
@@ -19,29 +20,74 @@ from user_profile.forms import (LoginForm,
                                 PasswordResetFormUnique,
                                 CustomPasswordChangeForm,
                                 )
+API_DOMAIN = settings.CASE_HISTORY_API['DOMAIN']
+API_URL = settings.CASE_HISTORY_API['URL']
 
 
 
+"""CCRH Functionality to check user existence in both apps - starts"""
+def check_user_existance(request):
+    """View for the login
+    1) Checking user existance in CCRH & CASE HISTORY App
+    3) Checks if user is valid and deactivated.
+    """
+    user_existance_in_app = ''
+    message = case_action_url = password = None
+    form = LoginForm(auto_id=False)
+    if request.method == 'GET':
+        return render(request, 'user_profile/login.html', {'form': form, })
+    if request.method == 'POST':
+        form = LoginForm(request, data=request.POST, auto_id=False)
+        if form.is_valid():
+            username =request.POST['username']
+            password =request.POST['password']
+            ccrh_user=authenticate(username=username,password=password) #Checking user in CCRH App
+            '''Case History User Check Start'''
+            data = {'username':username,
+                    'password':password
+                }
+            r = requests.post(url = API_DOMAIN+API_URL+'check_user/', data=data)
+            try:
+                result = r.json()
+            except:
+                result = {}
+            case_history_user_status = result.get('status')
+            '''Case History User Check End'''
+            if ccrh_user and ccrh_user.is_active and case_history_user_status==1: #if user exist in CCRH & CASE HISTORY both APP
+                user_existance_in_app = 'both'
+            elif case_history_user_status: # User is only in CCRH CASE HISTORY APP
+                if case_history_user_status == 1:
+                    user_existance_in_app = 'case_history'
+                else:
+                    message = result.get('message')
+            elif ccrh_user is not None: # User is only in CCRH Content APP
+                if ccrh_user.is_active:
+                    user_existance_in_app = 'ccrh'
+                else:
+                    message = _('Account is Blocked ! Please contact Admin')
+            else:
+                message = _('Login Failed! Please Verify Your Email or Mobile No. and Password')
+        else:
+            message = _('Login Failed! Please Verify Your Email or Mobile No. and Password')
+        return render(request, 'user_profile/login.html', {'form':form,
+                                                           "case_action_url" : settings.CASE_HISTORY_LOGIN_URL,
+                                                           "password":password,
+                                                           "user_existance_in_app":user_existance_in_app,
+                                                            "message" : message,
+                                                            })
+"""CCRH Functionality to check user existence in both apps - ends"""
 
 """CCRH Login Functionality - starts"""
 def login_view(request):
-    """View for the login
-    1) Already login in are not
-    2) Direct navigation logic after success login
-    3) Checks if user is valid and deactivated.
-    """
     form = LoginForm(auto_id=False)
     redirect_to = request.GET['next'] if request.GET else None
-    
     if request.method == 'GET':
         if request.user.is_authenticated and not request.user.is_superuser:
             return HttpResponseRedirect('/dashboard/')
         elif request.user.is_authenticated and request.user.is_superuser:
             return HttpResponseRedirect('/admin/')
         else:
-            return render(request,
-                          'user_profile/login.html', {'form': form,
-                                                     })
+            return render(request, 'user_profile/login.html', { 'form': form, })
             
     if request.method == 'POST':
         form = LoginForm(request, data=request.POST, auto_id=False)
@@ -68,7 +114,6 @@ def login_view(request):
                                                             "message" : message,
                                                             })
 """CCRH Login Functionality - ends"""
-     
      
 """CCRH Logout Functionality - starts"""     
 def logout_view(request):
