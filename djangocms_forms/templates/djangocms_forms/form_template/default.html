@@ -13,7 +13,7 @@
 			<div class="form-errors" style="display:none;"></div>
 			{% for field in form.visible_fields %}
 				<div class="field-wrapper {{ field|input_class }} {{ field.css_classes }}{% if field|is_honeypot %} visuallyhidden{% endif %}">
-                    <div class="field-errors" style="display:none;"></div>
+                    <!-- <div class="field-errors" style="display:none;"></div> -->
 					{% if field|is_checkbox %}
 						{{ field }}
 					{% endif %}
