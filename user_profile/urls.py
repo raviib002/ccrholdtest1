@@ -6,7 +6,8 @@ from user_profile.forms import CustomSetPasswordForm, PasswordResetFormUnique, C
 app_name="user_profile"
 
 urlpatterns = [
-    path('login/', user_profile_views.login_view, name="login"),
+    path('login/', user_profile_views.check_user_existance, name="check_user_existance"),
+    path('app_login/', user_profile_views.login_view, name="login"),
     path('logout/', user_profile_views.logout_view, name='logout'),
     path('change_password/', user_profile_views.change_password, name='change_password'),
     path('forget_password/', user_profile_views.password_forgot, name='forget_password'),
