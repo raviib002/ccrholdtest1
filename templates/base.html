@@ -6,10 +6,10 @@
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width,initial-scale=1">
         {% render_block "css" %}
-        <title>CCRH</title>
-        <meta name="description" content="">
-        <meta name="keywords" content="">
+        {% block meta %}{% endblock %}
+        <title>{% block title %}{% trans "CCRH" %}{% endblock %}</title>
         {% include "cssfiles.html" %}
+        {% render_block "css" %}
         {% block staticurls %}
             <link rel="stylesheet" href="{% static_with_version 'cms/css/cms.base.css' %}">
             <link rel="stylesheet" href="{% static_with_version 'cms/css/cms.welcome.css' %}">
@@ -26,7 +26,7 @@
                         {% show_menu %}
                     </ul>
                     <ul class="navigation2 list-unstyled d-flex">
-                        <li class="login"><a href="{% url 'user_profile:login' %}">{% trans 'Login' %}</a></li>
+                        <li class="login"><a href="{% url 'user_profile:check_user_existance' %}">{% trans 'Login' %}</a></li>
                         <li class="login register"><a href="#">{% trans 'Register' %}</a></li>
                     </ul>
                 </div>
@@ -170,6 +170,7 @@
     {% include "jsfiles.html" %}
 
 </body>
+{% render_block "js" %}
 {% block jsfilesurls %}{% endblock %}
 <script type="text/javascript" src="{% static 'js/validation.js'%}"></script>
 <script type="text/javascript">
