@@ -61,6 +61,8 @@ INSTALLED_APPS = [
     'import_export',
     'admin_reorder',
     'djangocms_forms',
+    'meta', #DJango CMS Meta tags plugin
+    'djangocms_page_meta', #DJango CMS Meta tags plugin
 ]
 
 MIDDLEWARE = [
@@ -193,6 +195,7 @@ CMS_TEMPLATES = (
     ('cms/publications.html', 'Publications'),
     ('cms/research_activities.html', 'Research Activities'),
     ('cms/rti.html', 'RTI'),
+    ('cms/tnc.html', 'T & C'),
 )
 
 CMS_PERMISSION = True
@@ -223,8 +226,16 @@ CMS_LANGUAGES = {
 #         },
     ],
     }
+DJANGOCMS_FORMS_PLUGIN_NAME = _('Contact Us Form')
 DJANGOCMS_FORMS_USE_HTML5_REQUIRED = False
 DJANGOCMS_FORMS_WIDGET_CSS_CLASSES = {'__all__': ('form-control', ) }
+
+DJANGOCMS_STYLE_TAGS = ['div', 'article', 'section', 'header', 'footer',
+                       'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'span',
+                       'ul', 'ol', 'li', 'i', 'a']
+META_SITE_PROTOCOL = 'http'
+META_USE_SITES = True
+
 '''CMS Settings End Here'''
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
@@ -237,3 +248,12 @@ DEFAULT_FROM_EMAIL = 'smtp@baryonssoftsolutions.com'
 SEND_MAIL_ALL_PLACE = True
 
 '''Email setting Ends'''
+
+'''Case History API Endpoint'''
+CASE_HISTORY_API = {
+    'DOMAIN' : 'http://127.0.0.1:9000/en',
+    'URL' : '/user/'
+    }
+CASE_HISTORY_LOGIN_URL = 'http://127.0.0.1:9000/en/user/login/'
+CASE_HISTORY_REGISTRATION_URL = 'http://127.0.0.1:9000/en/user/registration/'
+
