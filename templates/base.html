@@ -1,12 +1,10 @@
-{% load i18n staticfiles cms_tags cms_static sekizai_tags %}
+{% load i18n staticfiles cms_tags cms_static sekizai_tags common_templatetags page_meta_tags %}
+{% page_meta request.current_page as page_meta %}
 <!doctype html>
 <html>
     <head>
-        <meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <meta name="viewport" content="width=device-width,initial-scale=1">
+        {% include 'djangocms_page_meta/meta.html' with meta=page_meta %}
         {% render_block "css" %}
-        {% block meta %}{% endblock %}
         <title>{% block title %}{% trans "CCRH" %}{% endblock %}</title>
         {% include "cssfiles.html" %}
         {% render_block "css" %}
@@ -23,11 +21,11 @@
                 <div class="wrapper d-flex justify-content-between">
                     <ul class="navigation list-unstyled d-flex justify-content-between">
                         {% load menu_tags %}
-                        {% show_menu %}
+                        {% show_menu 0 100 100 100 "custome_cms_menu/menu.html" %}
                     </ul>
                     <ul class="navigation2 list-unstyled d-flex">
                         <li class="login"><a href="{% url 'user_profile:check_user_existance' %}">{% trans 'Login' %}</a></li>
-                        <li class="login register"><a href="#">{% trans 'Register' %}</a></li>
+                        <li class="login register"><a href="{% settings_value "CASE_HISTORY_REGISTRATION_URL" %}">{% trans 'Register' %}</a></li>
                     </ul>
                 </div>
             </nav>
@@ -89,15 +87,9 @@
                             <div class="navigation_block">
                                 <p class="navigation_section">{% trans 'Navigation' %}</p>
                                 <ul class="list-unstyled">
-                                    <li>{% trans 'About Us' %}</li>
-                                    <li>{% trans 'Network Research' %}</li>
-                                    <li>{% trans 'Activities' %}</li>
-                                    <li>{% trans 'Publications' %}</li>
-                                    <li>{% trans 'Library' %}</li>
-                                    <li>{% trans 'Media' %}</li>
-                                    <li>{% trans 'Announcement' %}</li>
-                                    <li>{% trans 'FAQ' %}</li>
-                                    <li>{% trans 'Contact Us' %}</li>
+                                    {% load menu_tags %}
+                                    {% show_menu 0 100 100 100 "custome_cms_menu/footer_menu.html" %}
+                                    <li><a href='/en/contact-us'>{% trans 'Contact Us' %}</a></li>
                                 </ul>
                             </div>
                         </div>
