@@ -10,7 +10,7 @@ from django.utils.translation import ugettext_lazy as _
 
 
 class LoginForm(AuthenticationForm):
-    username = forms.CharField(required=True, label=_("Email or Mobile Number"), max_length=254, widget=forms.TextInput(attrs={'class':'form-control lowercase','placeholder': 'Email or Mobile Number'}))
+    username = forms.CharField(required=True, label=_("Email"), max_length=254, widget=forms.TextInput(attrs={'class':'form-control lowercase','placeholder': 'Email'}))
     password = forms.CharField(required=True, label=_("Password"), widget=forms.PasswordInput(attrs={'class':'form-control','id':'password','placeholder': 'Password'}))
    
     def clean(self):
