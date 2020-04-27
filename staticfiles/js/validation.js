@@ -219,9 +219,14 @@ $(".logo_section_block").ready(function() {
             },
         },
     });
-    
+// Portal selection popup js    
     $(".options").click(function() {
         $(".options").removeClass("active");
+        $(this).addClass("active");
+    });
+//FAQ Plus and Minus js    
+    $(".question_block").click(function() {
+        $(".question_block").removeClass("active");
         $(this).addClass("active");
     });
 
