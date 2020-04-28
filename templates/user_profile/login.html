@@ -146,7 +146,7 @@ function app_submit(app_type){
     else if(app_type=='ccrh'){
         $('#logn_form').attr('action', '{% url 'user_profile:login' %}');
     }
-    $("#password").replaceWith('<input type="password" name="password" value="{{ password }}" id="password" >');
+    $("#password").replaceWith('<input type="password" name="password" value="{{ password }}" id="password" class="form-control" placeholder="Password">');
     document.logn_form.submit();
 }
 //Based on App selection or user existance submitting form to App - End
