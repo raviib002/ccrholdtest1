@@ -1,11 +1,11 @@
 {% extends "base.html" %}
-{% load i18n staticfiles %}
+{% load i18n staticfiles common_templatetags %}
 {% block content %}
 
         <div class="banner_section1">
             <div class="login_section">
                 <form class="login_form_container " id="logn_form" name="logn_form"  action="{% url 'user_profile:check_user_existance' %}" method="post">{% csrf_token %}
-                    <div class="register"><span>{% trans 'Don\'t have an account?' %}</span><span><a href="#">{% trans 'Register Here' %}</a></span></div>
+                    <div class="register"><span>{% trans 'Don\'t have an account?' %}</span><span><a href="{% settings_value "CASE_HISTORY_REGISTRATION_URL" %}">{% trans 'Register Here' %}</a></span></div>
                     <div class="row">
                         <div class="col-12">
                             <div class="login_form">
