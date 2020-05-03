@@ -66,9 +66,9 @@ def check_user_existance(request):
                 else:
                     message = _('Account is Blocked ! Please contact Admin')
             else:
-                message = _('Login Failed! Please Verify Your Email or Mobile No. and Password')
+                message = _('Login Failed! Please Verify Your Email and Password')
         else:
-            message = _('Login Failed! Please Verify Your Email or Mobile No. and Password')
+            message = _('Login Failed! Please Verify Your Email and Password')
         return render(request, 'user_profile/login.html', {'form':form,
                                                            "case_action_url" : settings.CASE_HISTORY_LOGIN_URL,
                                                            "password":password,
@@ -107,9 +107,9 @@ def login_view(request):
                 else:
                     message = _('Account is Blocked ! Please contact Admin')
             else:
-                message = _('Login Failed! Please Verify Your Email or Mobile No. and Password')
+                message = _('Login Failed! Please Verify Your Email and Password')
         else:
-            message = _('Login Failed! Please Verify Your Email or Mobile No. and Password')
+            message = _('Login Failed! Please Verify Your Email and Password')
         return render(request, 'user_profile/login.html', {'form':form,
                                                             "message" : message,
                                                             })
