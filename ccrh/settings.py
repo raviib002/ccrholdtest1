@@ -135,10 +135,16 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+        'NAME': 'user_profile.password_validator.NumberValidator', 
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+        'NAME': 'user_profile.password_validator.UppercaseValidator', 
+    },
+    {
+        'NAME': 'user_profile.password_validator.LowercaseValidator', 
+    },
+    {
+        'NAME': 'user_profile.password_validator.SymbolValidator', 
     },
 ]
 
@@ -185,17 +191,45 @@ AUTHENTICATION_BACKENDS = (
 '''CMS Settings Start Here'''
 CMS_TEMPLATES = (
     ('cms/home.html', 'Home'),
-    ('cms/about_us.html', 'About Us'),
-    ('cms/announcements.html', 'Announcements'),
     ('cms/contact_us.html', 'Contact Us'),
     ('cms/faq.html', 'FAQ'),
-    ('cms/gallery.html', 'Gallery'),
-    ('cms/library.html', 'Library'),
-    ('cms/our_network.html', 'Our Network'),
-    ('cms/publications.html', 'Publications'),
-    ('cms/research_activities.html', 'Research Activities'),
     ('cms/rti.html', 'RTI'),
-    ('cms/tnc.html', 'T & C'),
+    ('cms/submit.html', 'Submit'),
+    ('cms/submit-a-manuscript.html', 'Submit A Manuscript'),
+    ('cms/e-tutorials.html', 'E-Tutorials'),
+    
+    ('cms/about_us/about_us.html', 'About Us'),
+    ('cms/about_us/aims-and-scope.html', 'Aims And Scope'),
+    ('cms/about_us/authors-incentives.html', 'Authors Incentives'),
+    ('cms/about_us/editorial-reviewers-board.html', 'Editorial Reviewers Board'),
+    ('cms/about_us/why-publish-hccr.html', 'Why Publish Hccr'),
+    
+    ('cms/editorial_policies/appeals-and-complaints-policy.html', 'Appeals And Complaints Policy'),
+    ('cms/editorial_policies/commercial-use-and-reprints.html', 'Commercial Use And Reprints'),
+    ('cms/editorial_policies/copyright-and-licenses.html', 'Copyright And Licenses'),
+    ('cms/editorial_policies/data-deposition-and-data-sharing.html', 'Data Deposition And Data Sharing'),
+    ('cms/editorial_policies/editorial-policies.html', 'Editorial Policies'),
+    ('cms/editorial_policies/peer-review.html', 'Peer Review'),
+    ('cms/editorial_policies/plagiarism-detection.html', 'Plagiarism Detection'),
+    ('cms/editorial_policies/publication-ethics.html', 'Publication Ethics'),
+    ('cms/editorial_policies/reporting-guidelines.html', 'Reporting Guidelines'),
+    ('cms/editorial_policies/scientific-misconduct.html', 'Scientific Misconduct'),
+    ('cms/editorial_policies/text-and-data-mining.html', 'Text And Data Mining'),
+    
+    ('cms/submission_guidelines/clinical-trial-registration.html', 'Clinical Trial Registration'),
+    ('cms/submission_guidelines/conflict-interest-policies.html', 'Conflict Interest Policies'),
+    ('cms/submission_guidelines/copyrights-authors-readers-and-publisher.html', 'Copyrights Authors Readers And Publisher'),
+    ('cms/submission_guidelines/ethics.html', 'Ethics'),
+    ('cms/submission_guidelines/guide-submission-status.html', 'Guide Submission Status'),
+    ('cms/submission_guidelines/manuscript-organization.html', 'Manuscript Organization'),
+    ('cms/submission_guidelines/manuscript-preparation.html', 'Manuscript Preparation'),
+    ('cms/submission_guidelines/manuscript-templates.html', 'Manuscript Templates'),
+    ('cms/submission_guidelines/pre-submissions.html', 'Pre Submissions'),
+    ('cms/submission_guidelines/privacy-policy.html', 'Privacy Policy'),
+    ('cms/submission_guidelines/submission-guidelines.html', 'Submission Guidelines'),
+    ('cms/submission_guidelines/submission-manuscripts.html', 'Submission Manuscripts'),
+    ('cms/submission_guidelines/terms-publication.html', 'Terms Publication'),
+    ('cms/submission_guidelines/tnc.html', 'T & C'),
 )
 
 CMS_PERMISSION = True
