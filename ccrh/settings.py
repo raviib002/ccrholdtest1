@@ -285,9 +285,9 @@ SEND_MAIL_ALL_PLACE = True
 
 '''Case History API Endpoint'''
 CASE_HISTORY_API = {
-    'DOMAIN' : 'http://127.0.0.1:9000/en',
+    'DOMAIN' : 'http://ccrhch.azurewebsites.net:80/en',
     'URL' : '/user/'
     }
-CASE_HISTORY_LOGIN_URL = 'http://127.0.0.1:9000/en/user/login/'
-CASE_HISTORY_REGISTRATION_URL = 'http://127.0.0.1:9000/en/user/registration/'
+CASE_HISTORY_LOGIN_URL = 'http://ccrhch.azurewebsites.net:80/en/user/login/'
+CASE_HISTORY_REGISTRATION_URL = 'http://ccrhch.azurewebsites.net:80/en/user/registration/'
 
