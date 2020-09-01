@@ -29,7 +29,7 @@ class Command(BaseCommand):
 
     default_addr = '127.0.0.1'
     default_addr_ipv6 = '::1'
-    default_port = '80'
+    default_port = '8000'
     protocol = 'http'
     server_cls = WSGIServer
 
