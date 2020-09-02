@@ -63,6 +63,7 @@ INSTALLED_APPS = [
     'djangocms_forms',
     'meta', #DJango CMS Meta tags plugin
     'djangocms_page_meta', #DJango CMS Meta tags plugin
+    'storages'
 ]
 
 MIDDLEWARE = [
@@ -291,3 +292,14 @@ CASE_HISTORY_API = {
 CASE_HISTORY_LOGIN_URL = 'http://ccrhch.azurewebsites.net/en/user/login/'
 CASE_HISTORY_REGISTRATION_URL = 'http://ccrhch.azurewebsites.net/en/user/registration/'
 
+# Azure Static files rendering from the Azre Storage Blob
+DEFAULT_FILE_STORAGE = 'backend.custom_azure.AzureMediaStorage'
+STATICFILES_STORAGE = 'backend.custom_azure.AzureStaticStorage'
+
+STATIC_LOCATION = "static"
+MEDIA_LOCATION = "media"
+
+AZURE_ACCOUNT_NAME = "ccrhstaticfiles"
+AZURE_CUSTOM_DOMAIN = f'ccrhstaticfiles.blob.core.windows.net'
+STATIC_URL = f'https://ccrhstaticfiles.blob.core.windows.net/ccrhstatic/'
+MEDIA_URL = f'https://ccrhstaticfiles.blob.core.windows.net/ccrhmedia/'
