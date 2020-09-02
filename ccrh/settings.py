@@ -116,7 +116,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql', 
-        'NAME': 'ccrh',
+        'NAME': 'ccrhmysql',
         'USER': 'rooot@ccrhmariadbb',
         'PASSWORD': 'Baryons@12345',
         'HOST': 'ccrhmariadbb.mariadb.database.azure.com',   # Or an IP Address that your DB is hosted on
