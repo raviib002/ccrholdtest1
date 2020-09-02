@@ -44,6 +44,7 @@ djangocms-snippet==2.3.0
 djangocms-style==2.3.0
 djangocms-text-ckeditor==3.9.0
 djangocms-video==2.3.0
+django-storages==1.10
 easy-thumbnails==2.7
 et-xmlfile==1.0.1
 fhir.resources==5.0.1
