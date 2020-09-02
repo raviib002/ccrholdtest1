@@ -117,9 +117,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql', 
         'NAME': 'ccrh',
-        'USER': 'administrator1@ccrhmariadb',
-        'PASSWORD': 'Welcome@123',
-        'HOST': 'ccrhmariadb.mariadb.database.azure.com',   # Or an IP Address that your DB is hosted on
+        'USER': 'rooot@ccrhmariadbb',
+        'PASSWORD': 'Baryons@12345',
+        'HOST': 'ccrhmariadbb.mariadb.database.azure.com',   # Or an IP Address that your DB is hosted on
         'PORT': '3306',
         'OPTIONS': {
             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
