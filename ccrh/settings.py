@@ -293,8 +293,8 @@ CASE_HISTORY_LOGIN_URL = 'http://ccrhch.azurewebsites.net/en/user/login/'
 CASE_HISTORY_REGISTRATION_URL = 'http://ccrhch.azurewebsites.net/en/user/registration/'
 
 # Azure Static files rendering from the Azre Storage Blob
-DEFAULT_FILE_STORAGE = 'backend.custom_azure.AzureMediaStorage'
-STATICFILES_STORAGE = 'backend.custom_azure.AzureStaticStorage'
+DEFAULT_FILE_STORAGE = 'ccrh.custom_azure.AzureMediaStorage'
+STATICFILES_STORAGE = 'ccrh.custom_azure.AzureStaticStorage'
 
 STATIC_LOCATION = "static"
 MEDIA_LOCATION = "media"
