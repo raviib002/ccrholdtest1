@@ -299,7 +299,7 @@ STATICFILES_STORAGE = 'ccrh.custom_azure.AzureStaticStorage'
 STATIC_LOCATION = "static"
 MEDIA_LOCATION = "media"
 
-AZURE_ACCOUNT_NAME = "ccrhstaticfiles"
-AZURE_CUSTOM_DOMAIN = f'ccrhstaticfiles.blob.core.windows.net'
-STATIC_URL = f'https://ccrhstaticfiles.blob.core.windows.net/ccrhstatic/'
-MEDIA_URL = f'https://ccrhstaticfiles.blob.core.windows.net/ccrhmedia/'
+AZURE_ACCOUNT_NAME = "ccrhhot"
+AZURE_CUSTOM_DOMAIN = f'ccrhhot.blob.core.windows.net'
+STATIC_URL = f'https://ccrhhot.blob.core.windows.net/ccrhstatic/'
+MEDIA_URL = f'https://ccrhhot.blob.core.windows.net/ccrhmedia/'
