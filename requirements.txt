@@ -71,4 +71,3 @@ urllib3==1.25.8
 webencodings==0.5.1
 YURL==1.0.0
 azure
-azure-storage-blob
