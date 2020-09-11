@@ -286,11 +286,11 @@ SEND_MAIL_ALL_PLACE = True
 
 '''Case History API Endpoint'''
 CASE_HISTORY_API = {
-    'DOMAIN' : 'http://ccrhch.azurewebsites.net/en',
+    'DOMAIN' : 'http://ccrhtest.azurewebsites.net/en',
     'URL' : '/user/'
     }
-CASE_HISTORY_LOGIN_URL = 'http://ccrhch.azurewebsites.net/en/user/login/'
-CASE_HISTORY_REGISTRATION_URL = 'http://ccrhch.azurewebsites.net/en/user/registration/'
+CASE_HISTORY_LOGIN_URL = 'http://ccrhtest.azurewebsites.net/en/user/login/'
+CASE_HISTORY_REGISTRATION_URL = 'http://ccrhtest.azurewebsites.net/en/user/registration/'
 
 # Azure Static files rendering from the Azre Storage Blob
 DEFAULT_FILE_STORAGE = 'ccrh.custom_azure.AzureMediaStorage'
@@ -299,7 +299,7 @@ STATICFILES_STORAGE = 'ccrh.custom_azure.AzureStaticStorage'
 STATIC_LOCATION = "static"
 MEDIA_LOCATION = "media"
 
-AZURE_ACCOUNT_NAME = "ccrhhot"
-AZURE_CUSTOM_DOMAIN = f'ccrhhot.blob.core.windows.net'
-STATIC_URL = f'https://ccrhhot.blob.core.windows.net/ccrhstatic/'
-MEDIA_URL = f'https://ccrhhot.blob.core.windows.net/ccrhmedia/'
+AZURE_ACCOUNT_NAME = "ccrh1"
+AZURE_CUSTOM_DOMAIN = f'ccrh1.blob.core.windows.net'
+STATIC_URL = f'https://ccrh1.blob.core.windows.net/static/'
+MEDIA_URL = f'https://ccrh1.blob.core.windows.net/media/'
