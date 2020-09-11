@@ -25,7 +25,7 @@ SECRET_KEY = '*ubmb)x@*m1pv15=6^l%js)j+dh0x_xug&5i9feytjxmwsz=f&'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['ccrh.azurewebsites.net']
+ALLOWED_HOSTS = ['ccrhtest.azurewebsites.net']
 SITE_ID = 1
 ADMIN_EMAIL = 'smtp@baryonssoftsolutions.com'
 # Application definition
@@ -117,10 +117,10 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql', 
-        'NAME': 'ccrhmysql',
-        'USER': 'ccrhmysql@ccrhmysql',
-        'PASSWORD': 'Baryons@12345',
-        'HOST': 'ccrhmysql.mariadb.database.azure.com',   # Or an IP Address that your DB is hosted on
+        'NAME': 'ccrhtest',
+        'USER': 'rooot@ccrh',
+        'PASSWORD': 'Baryons@123',
+        'HOST': 'ccrh.mariadb.database.azure.com',   # Or an IP Address that your DB is hosted on
         'PORT': '3306',
         'OPTIONS': {
             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
